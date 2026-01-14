@@ -25,27 +25,36 @@ return {
   "nvim-treesitter/nvim-treesitter",
   lazy = false, -- 不支持懒加载
   build = function()
-    -- Windows 上指定编译器
+    -- 跨平台编译器配置
     if vim.fn.has("win32") == 1 then
-      -- 优先使用 clang，如果没有则尝试 zig
-      if vim.fn.executable("clang") == 1 then
-        require("nvim-treesitter.install").compilers = { "clang" }
-      elseif vim.fn.executable("zig") == 1 then
-        require("nvim-treesitter.install").compilers = { "zig" }
+      -- Windows 上优先使用 zig，其次 clang，最后 gcc
+      if vim.fn.executable("zig") == 1 then
+        require("nvim-treesitter.install").compilers = { "zig", "clang", "gcc" }
+      elseif vim.fn.executable("clang") == 1 then
+        require("nvim-treesitter.install").compilers = { "clang", "gcc" }
+      else
+        require("nvim-treesitter.install").compilers = { "gcc" }
       end
+    else
+      -- Linux/macOS 上优先使用 gcc，其次 clang
+      require("nvim-treesitter.install").compilers = { "gcc", "clang" }
     end
 
     -- 运行 TSUpdate
     vim.cmd("TSUpdate")
   end,
   config = function()
-    -- Windows 上指定编译器
+    -- 跨平台编译器配置（与 build 保持一致）
     if vim.fn.has("win32") == 1 then
-      if vim.fn.executable("clang") == 1 then
-        require("nvim-treesitter.install").compilers = { "clang" }
-      elseif vim.fn.executable("zig") == 1 then
-        require("nvim-treesitter.install").compilers = { "zig" }
+      if vim.fn.executable("zig") == 1 then
+        require("nvim-treesitter.install").compilers = { "zig", "clang", "gcc" }
+      elseif vim.fn.executable("clang") == 1 then
+        require("nvim-treesitter.install").compilers = { "clang", "gcc" }
+      else
+        require("nvim-treesitter.install").compilers = { "gcc" }
       end
+    else
+      require("nvim-treesitter.install").compilers = { "gcc", "clang" }
     end
 
     -- 新版 API：使用 require('nvim-treesitter').setup()
