@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__context7__resolve-library-id",
+      "mcp__exa-search__web_search_exa",
+      "mcp__fetch__fetch"
+    ]
+  }
+}
