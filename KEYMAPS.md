@@ -50,6 +50,9 @@
 |------|--------|------|
 | 下一个 buffer | `<Space>b]` | **b**uffer **]** next |
 | 上一个 buffer | `<Space>b[` | **b**uffer **[** prev |
+| 下一个 buffer | `Tab` | 快捷方式 |
+| 上一个 buffer | `Shift-Tab` | 快捷方式 |
+| 切换到最近 buffer | `<Space>bb` | **b**uffer **b**ack (在两个 buffer 间循环) |
 | 关闭 buffer | `<Space>bd` | **b**uffer **d**elete |
 | 关闭其他 buffer | `<Space>bo` | **b**uffer **o**nly |
 | 搜索 buffer | `<Space>fb` | **f**ind **b**uffer |

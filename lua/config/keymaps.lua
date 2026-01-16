@@ -25,6 +25,9 @@ keymap("n", "<Tab>", ":bnext<CR>", opts) -- 快捷方式：Tab 键
 keymap("n", "<Leader>b[", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous buffer" })
 keymap("n", "<S-Tab>", ":bprevious<CR>", opts) -- 快捷方式：Shift+Tab
 
+-- 切换到最近使用的 buffer（在两个 buffer 间循环）
+keymap("n", "<Leader>bb", "<C-^>", { noremap = true, silent = true, desc = "Toggle to alternate buffer" })
+
 -- 关闭当前 buffer
 keymap("n", "<Leader>bd", ":bdelete<CR>", { noremap = true, silent = true, desc = "Delete buffer" })
 
