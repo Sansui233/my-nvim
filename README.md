@@ -9,6 +9,10 @@
 
 > ⚠️ **Windows 用户特别注意**：nvim-treesitter 在 Windows 上需要额外配置 C 编译器。详见下方「前置依赖」和「常见问题」章节。
 
+## 快捷键
+
+见 [Keymaps.md](./KEYMAPS.md)
+
 ## 📁 目录结构
 
 ```
