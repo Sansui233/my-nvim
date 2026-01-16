@@ -14,13 +14,26 @@ return {
   keys = {
     { "<leader>e", ":Neotree toggle<CR>", desc = "Toggle Neo-tree" },
     { "<leader>o", ":Neotree focus<CR>", desc = "Focus Neo-tree" },
-    { "<leader>ge", ":Neotree float git_status<CR>", desc = "Git status (Neo-tree)" },
+    { "<leader>be", ":Neotree left buffers<CR>", desc = "Buffer explorer (Neo-tree)" },
+    { "<leader>ge", ":Neotree left git_status<CR>", desc = "Git status (Neo-tree)" },
   },
   opts = {
     close_if_last_window = true, -- 如果是最后一个窗口则关闭
     popup_border_style = "rounded",
     enable_git_status = true,
     enable_diagnostics = true,
+
+    -- 顶部标签栏（显示 Buffers / Filesystem / Git Status）
+    source_selector = {
+      winbar = true,
+      sources = {
+        { source = "filesystem", display_name = " 󰉋 Files " },
+        { source = "buffers", display_name = " 󰈚 Buffers " },
+        { source = "git_status", display_name = " 󰊢 Git " },
+      },
+      separator = { left = "▏", right = "▕" },
+      show_separator_on_edge = false,
+    },
 
     default_component_configs = {
       indent = {
