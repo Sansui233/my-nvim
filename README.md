@@ -23,10 +23,12 @@ nvim/
 │       ├── lightline.lua      # 状态栏
 │       ├── neo-tree.lua       # 文件浏览器
 │       ├── telescope.lua      # 强大的模糊搜索（命令面板、快捷键搜索等）
-│       ├── fzf.lua            # 模糊查找
-│       ├── git.lua            # Git 集成（gitgutter）
+│       ├── git.lua            # Git 集成（gitsigns.nvim）
 │       ├── treesitter.lua     # 语法高亮和代码理解
-│       ├── editing.lua        # 编辑增强（surround, commentary, auto-pairs 等）
+│       ├── blink-cmp.lua      # 代码补全
+│       ├── editing.lua        # 编辑增强（surround, commentary, autopairs 等）
+│       ├── toggleterm.lua     # 终端集成
+│       ├── textobjects.lua    # 额外的 text objects（ae 全文选择）
 │       └── whichkey.lua       # 快捷键提示
 ```
 

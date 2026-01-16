@@ -112,7 +112,6 @@
 
 | 功能 | 快捷键 | 助记 |
 |------|--------|------|
-| 切换换行 | `Alt-Z` | VSCode 风格 |
 | 切换换行 | `<Space>tw` | **t**oggle **w**rap |
 | 切换自动格式化 | `<Space>tf` | **t**oggle **f**ormat |
 | 切换相对行号 | `<Space>tr` | **t**oggle **r**elative |
@@ -151,6 +150,43 @@
 - Windows: 自动使用 `pwsh.exe` 或 `powershell.exe`
 - Linux/macOS: 自动使用 `zsh` 或 `bash`
 
+## 🔀 Git 操作（Gitsigns）
+
+| 功能 | 快捷键 | 助记 |
+|------|--------|------|
+| 下一个 hunk | `]h` | **]** next **h**unk |
+| 上一个 hunk | `[h` | **[** prev **h**unk |
+| Stage hunk | `<Space>hs` | **h**unk **s**tage |
+| Reset hunk | `<Space>hr` | **h**unk **r**eset |
+| Stage 整个文件 | `<Space>hS` | **h**unk **S**tage all |
+| Reset 整个文件 | `<Space>hR` | **h**unk **R**eset all |
+| Undo stage hunk | `<Space>hu` | **h**unk **u**ndo |
+| 预览 hunk | `<Space>hp` | **h**unk **p**review |
+| 显示行 blame | `<Space>hb` | **h**unk **b**lame |
+| 切换行 blame | `<Space>hB` | **h**unk **B**lame toggle |
+| Diff 当前文件 | `<Space>hd` | **h**unk **d**iff |
+
+**左侧标记颜色**：
+- 绿色 `│` - 新增行（未 stage）
+- 黄色 `│` - 修改行（未 stage）
+- 红色 `_` - 删除行（未 stage）
+- 暗绿色 `│` - 新增行（已 stage）
+- 暗黄色 `│` - 修改行（已 stage）
+- 暗红色 `_` - 删除行（已 stage）
+
+**Visual 模式**：
+- 选中多行后按 `<Space>hs` - Stage 选中的行
+- 选中多行后按 `<Space>hr` - Reset 选中的行
+
+## 📝 Text Objects
+
+| 功能 | 快捷键 | 说明 |
+|------|--------|------|
+| 选择全文 | `vae` | **a**ll **e**ntire |
+| 选择全文（无首尾空行） | `vie` | **i**nner **e**ntire |
+| 删除全文 | `dae` | **d**elete **a**ll |
+| 复制全文 | `yae` | **y**ank **a**ll |
+
 ## 💡 记忆技巧
 
 ### 前缀规则
@@ -159,6 +195,7 @@
 - `<Space>w` - **W**indow 操作
 - `<Space>f` - **F**ind 搜索
 - `<Space>g` - **G**it 操作
+- `<Space>h` - **H**unk 操作（Git 代码块）
 
 ### 方向符号
 - `[` - 向前/上一个
