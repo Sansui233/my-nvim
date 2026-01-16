@@ -20,7 +20,6 @@ return {
       -- 自定义快捷键
       ["<Tab>"] = { "select_and_accept", "snippet_forward", "fallback" }, -- Tab 接受补全或跳转到下一个片段位置
       ["<S-Tab>"] = { "snippet_backward", "fallback" }, -- Shift-Tab 跳转到上一个片段位置
-      ["<CR>"] = { "accept", "fallback" }, -- Enter 也可以接受
       ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
       ["<C-e>"] = { "hide" },
       ["<C-k>"] = { "show_documentation", "hide_documentation" },
