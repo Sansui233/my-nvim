@@ -18,10 +18,14 @@ return {
     },
   },
 
-  -- 自动括号
+  -- 自动括号（Lua 版本，兼容性更好）
   {
-    "jiangmiao/auto-pairs",
+    "windwp/nvim-autopairs",
     event = "InsertEnter",
+    opts = {
+      check_ts = true,  -- 使用 treesitter 检查
+      fast_wrap = {},   -- 启用快速包裹
+    },
   },
 
   -- jk escape

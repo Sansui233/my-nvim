@@ -89,13 +89,7 @@ end, { noremap = true, silent = true, desc = "Format document" })
 -- ============================================================================
 -- Toggle 功能
 -- ============================================================================
--- Toggle wrap（自动换行）类似 VSCode 的 Alt+Z
-keymap("n", "<A-z>", function()
-  vim.wo.wrap = not vim.wo.wrap
-  print("Wrap: " .. (vim.wo.wrap and "ON" or "OFF"))
-end, { noremap = true, silent = false, desc = "Toggle wrap" })
-
--- 也可以用 Leader tw
+-- Toggle wrap（自动换行）
 keymap("n", "<Leader>tw", function()
   vim.wo.wrap = not vim.wo.wrap
   print("Wrap: " .. (vim.wo.wrap and "ON" or "OFF"))
