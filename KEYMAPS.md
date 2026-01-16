@@ -132,6 +132,25 @@
 - `d` / `r` - 删除/重命名
 - `H` - 显示隐藏文件
 
+## 💻 终端（ToggleTerm）
+
+| 功能 | 快捷键 | 助记 |
+|------|--------|------|
+| 打开/关闭终端（上下分屏） | `<Space>tt` | **t**oggle **t**erminal ⭐ |
+| 打开/关闭终端（左右分屏） | `<Space>tv` | **t**erminal **v**ertical |
+| 打开/关闭终端（浮动窗口） | `<Space>tF` | **t**erminal **F**loat |
+| 打开 Lazygit | `<Space>tg` | **t**erminal **g**it |
+
+**在终端内部**：
+- `Esc Esc` 或 `jk` - 退出终端模式（回到普通模式，终端仍然打开）
+- `Ctrl-W h/j/k/l` - 在终端模式下切换窗口
+- `Ctrl-D` 或输入 `exit` - 退出 shell 进程（关闭终端）
+- 再次按 `<Space>tt` - 隐藏终端（类似 VSCode 的 Ctrl+J）
+
+**Shell 自动检测**：
+- Windows: 自动使用 `pwsh.exe` 或 `powershell.exe`
+- Linux/macOS: 自动使用 `zsh` 或 `bash`
+
 ## 💡 记忆技巧
 
 ### 前缀规则
