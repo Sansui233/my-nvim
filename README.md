@@ -5,7 +5,9 @@
 有语法高亮与 buffer，常用 snippet 补全等功能，不含有 LSP 功能，以方便低性能服务器改配置使用。
 
 **配置版本**：2026-01-14
-**测试环境**：Windows 11, Neovim 0.11.0+, Zig 0.13.0
+**测试环境**：
+- Windows 11, Neovim 0.11.0+, Zig 0.13.0
+- Ubuntu 20/22, Neovim 0.11.0+
 
 > ⚠️ **Windows 用户特别注意**：nvim-treesitter 在 Windows 上需要额外配置 C 编译器。详见下方「前置依赖」和「常见问题」章节。
 
@@ -43,16 +45,18 @@ nvim/
 ### 必须安装
 
 1. **Git** - 用于 lazy.nvim 下载插件
+
    > Linux 自带
+
    ```powershell
    # Windows 上通过 winget 安装
    winget install Git.Git
    ```
 
-2. **Neovim >= 0.11.0** - Treesitter 需要较新版本（推荐使用 nightly）
+3. **Neovim >= 0.11.0** - Treesitter 需要较新版本（推荐使用 nightly）
    
-   > see https://neovim.io/doc/install/
-   > Linux 旧系统版本 build: https://github.com/neovim/neovim-releases
+   > see https://neovim.io/doc/install/  
+   > Linux 旧系统版本 build: https://github.com/neovim/neovim-releases  
    > Linux 需要 libfuse2 (或叫 libfuse2t64)，还有的需要 fuse
 
    ```powershell
@@ -60,9 +64,10 @@ nvim/
    nvim --version
    ```
 
-3. **C 编译器** - Treesitter 编译语法解析器需要
+4. **C 编译器** - Treesitter 编译语法解析器需要
 
    > Linux 自带 gcc
+
    > 🔴 **Windows 必读**：这是 Windows 上最容易出问题的部分！
 
    **推荐方案：Zig 编译器**（最简单，已验证可用）
@@ -93,10 +98,11 @@ nvim/
 
    **备选方案：Visual Studio Build Tools + Clang**（详见「常见问题」章节）
 
-4. **tree-sitter CLI >= 0.26.1** - Treesitter 命令行工具
+5. **tree-sitter CLI >= 0.26.1** - Treesitter 命令行工具
 
-   二进制版本(需要放在Path下)： (tree-sitter release)[https://github.com/tree-sitter/tree-sitter/releases/latest]
+   二进制版本(需要放在Path下)： [tree-sitter release](https://github.com/tree-sitter/tree-sitter/releases/latest)
 
+   或者手本地编译，仅建议二进制版本无法运行时使用。
 
    ```powershell
    # 通过 npm 安装（需要先安装 Node.js）
@@ -106,7 +112,7 @@ nvim/
    cargo install tree-sitter-cli
    ```
 
-5. **tar 和 curl** - 下载和解压工具
+6. **tar 和 curl** - 下载和解压工具
    
    > Linux 自带
 
@@ -138,17 +144,19 @@ nvim/
 ## 🚀 初始化步骤
 
 ### 1. 备份现有配置
-- 原始的 `init.vim` 备份为 `init.vim.backup`
+
+- 原始的配置目录 `nvim`  备份为 `nvim.backup`
+- 原始的数据目录 `nvim-data` 备份为 `nvim-data.backup`
 
 克隆此仓库
 
-```
+```bash
+# linux
 git clone --depth=1 git@github.com:Sansui233/my-nvim.git ~/.config/nvim
 ```
 
-Windows
-
 ```powershell
+# windows
 git clone --depth=1 git@github.com:Sansui233/my-nvim.git ~\AppData\Local\nvim-data\lazy\lazy.nvim
 ```
 
