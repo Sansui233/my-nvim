@@ -53,7 +53,7 @@ nvim/
    winget install Git.Git
    ```
 
-3. **Neovim >= 0.11.0** - Treesitter 需要较新版本（推荐使用 nightly）
+3. **Neovim >= 0.11.0** - Treesitter 需要较新版本
    
    > see https://neovim.io/doc/install/  
    > Linux 旧系统版本 build: https://github.com/neovim/neovim-releases  
