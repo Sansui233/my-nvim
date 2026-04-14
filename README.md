@@ -105,12 +105,13 @@ nvim/
    或者手本地编译，仅建议二进制版本无法运行时使用。
 
    ```powershell
-   # 通过 npm 安装（需要先安装 Node.js）
-   npm install -g tree-sitter-cli
-   
-   # 或通过 Cargo 安装（需要先安装 Rust）
+   #通过 Cargo 安装（需要先安装 Rust）
    cargo install tree-sitter-cli
    ```
+   
+   > [!NOTE]
+   > 在 Neovim v0.11.* 可以通过 NPM 安装需要先安装 Node.js）
+   > npm install -g tree-sitter-cli
 
 6. **tar 和 curl** - 下载和解压工具
    
