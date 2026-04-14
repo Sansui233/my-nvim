@@ -2,6 +2,26 @@
 -- Lazy.nvim Plugin Manager Bootstrap
 -- ============================================================================
 
+local function remove_stale_packer_plugins()
+  local data_path = vim.fn.stdpath("data")
+  local site_path = data_path .. "/site"
+  local packer_root = site_path .. "/pack/packer"
+  local packer_start = data_path .. "/site/pack/packer/start"
+
+  if vim.fn.isdirectory(packer_root) == 0 then
+    return
+  end
+
+  vim.opt.packpath:remove(site_path)
+
+  local stale_plugins = vim.fn.glob(packer_start .. "/*", false, true)
+  for _, plugin_path in ipairs(stale_plugins) do
+    vim.opt.rtp:remove(plugin_path)
+  end
+end
+
+remove_stale_packer_plugins()
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({

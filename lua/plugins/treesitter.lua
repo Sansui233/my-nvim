@@ -44,6 +44,8 @@ return {
     vim.cmd("TSUpdate")
   end,
   config = function()
+    local treesitter = require("nvim-treesitter.init")
+
     -- 跨平台编译器配置（与 build 保持一致）
     if vim.fn.has("win32") == 1 then
       if vim.fn.executable("zig") == 1 then
@@ -59,13 +61,13 @@ return {
 
     -- 新版 API：使用 require('nvim-treesitter').setup()
     -- 而不是旧的 require('nvim-treesitter.configs').setup()
-    require("nvim-treesitter").setup({
+    treesitter.setup({
       -- 安装目录
       install_dir = vim.fn.stdpath("data") .. "/site",
     })
 
     -- 手动安装需要的语言解析器
-    require("nvim-treesitter").install({ "lua", "yaml", "json", "bash", "toml" })
+    treesitter.install({ "lua", "yaml", "json", "bash", "toml" })
 
     -- 为特定文件类型启用 treesitter 高亮
     vim.api.nvim_create_autocmd("FileType", {
